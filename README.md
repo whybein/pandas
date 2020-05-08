@@ -7,13 +7,13 @@ import pandas as pd
 
 ## Read files & Clean datas
 
-
+### 
 ```python
 # noa = number_of_accomod
 
 noa = pd.read_csv('tour_cap_nat.tsv', sep=r',|\t', engine='python')
 ```
-
+파일에 탭과 콤마가 모두 있는 파일입니다.
 
 ```python
 noa.head()
@@ -498,7 +498,6 @@ noa
 
 
 
-
 ```python
 noa.columns
 ```
@@ -514,7 +513,8 @@ noa.columns
           dtype='object')
 
 
-
+칼럼 값 중 인식하지 않는 '\', 그리고 공백을 제거합니다. 연도 데이터는 2016년도만 사용할 예정입니다.
+'\'는 python에서 '\\'으로 인식해 '\\'로 입력합니다.
 
 ```python
 noa = noa.rename(columns = {"geo\\time":"CC", "2016 ":"2016"})
@@ -537,7 +537,7 @@ noa.columns
 
 
 
-
+사용할 칼럼만 추립니다.
 ```python
 noa = noa[['accommod', 'unit', 'nace_r2', 'CC', '2016']]
 ```
@@ -610,7 +610,7 @@ noa.head()
 
 
 
-
+각 칼럼 중 해당되는 행만 사용할 예정입니다.
 ```python
 noa = noa.loc[noa['accommod'] == "BEDPL"]
 noa = noa.loc[noa['unit'] == "NR"]
@@ -629,7 +629,7 @@ noa.shape
 
 
 
-
+누락값 또는 제외할 값을 제거합니다.
 ```python
 noa = noa[~noa['2016'].str.contains(":")]
 noa = noa[~noa['CC'].str.contains("EU")]
@@ -682,7 +682,7 @@ noa.values
 
 
 
-
+공백을 제거합니다.
 ```python
 noa['2016'] = noa['2016'].str.strip()
 ```
@@ -733,6 +733,8 @@ noa.values
 
 
 
+### 두번째 파일
+첫번째 파일과 동
 
 ```python
 # uom = use_of_mobile
@@ -1636,6 +1638,7 @@ uom.values
 
 
 
+두  모두 문자열로 되어 있는 숫자를 수치로 변환합니다.
 
 ```python
 noa = noa[["CC", "2016"]]
@@ -1762,6 +1765,7 @@ uom.shape
 
 
 
+첫번째 파일의 데이터가 더 많기 때문에 left 
 
 ```python
 mer = pd.merge(noa, uom, how='left', on=['CC', 'CC'])
@@ -2303,6 +2307,7 @@ mer.to_csv('market_data_2016.csv')
 
 ## Visualization
 
+숙소숫자와 모바일기기 사용비율 두 수치의 분포도를 보기 위해 scatter plot
 
 ```python
 df = pd.read_csv('market_data_2016.csv')
@@ -2377,12 +2382,16 @@ label_point(df['Number of Bed-places'], df['Percentage of individuals online'], 
 
 ![png](output_54_1.png)
 
-
-
 ```python
 
 ```
 
+UK, ES, DE 세 나라가 가장 수치가 높기 때문에 세 나라를 우선 
+
+```python
+
+```
+마지막 도표에 값을 표시하는 방법은 아래 링크를 참조했습니다.
 https://stackoverflow.com/questions/15910019/annotate-data-points-while-plotting-from-pandas-dataframe/15911372#15911372
 
 
