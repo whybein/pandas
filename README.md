@@ -2316,25 +2316,9 @@ ax = df.plot(kind='scatter',x='Number of Bed-places',y='Percentage of individual
 df[['Number of Bed-places','Percentage of individuals online','Country Code']].apply(lambda row: ax.text(*row),axis=1);
 
 
-
 ```
 
-    posx and posy should be finite values
-    posx and posy should be finite values
-    posx and posy should be finite values
-    posx and posy should be finite values
-    posx and posy should be finite values
-    posx and posy should be finite values
-    posx and posy should be finite values
-    posx and posy should be finite values
-    posx and posy should be finite values
-    posx and posy should be finite values
-    posx and posy should be finite values
-    posx and posy should be finite values
-    posx and posy should be finite values
-    posx and posy should be finite values
-    posx and posy should be finite values
-    posx and posy should be finite values
+
 
 
 
@@ -2361,22 +2345,7 @@ label_point(df['Number of Bed-places'], df['Percentage of individuals online'], 
 
 ```
 
-    posx and posy should be finite values
-    posx and posy should be finite values
-    posx and posy should be finite values
-    posx and posy should be finite values
-    posx and posy should be finite values
-    posx and posy should be finite values
-    posx and posy should be finite values
-    posx and posy should be finite values
-    posx and posy should be finite values
-    posx and posy should be finite values
-    posx and posy should be finite values
-    posx and posy should be finite values
-    posx and posy should be finite values
-    posx and posy should be finite values
-    posx and posy should be finite values
-    posx and posy should be finite values
+
 
 
 
@@ -2386,12 +2355,12 @@ label_point(df['Number of Bed-places'], df['Percentage of individuals online'], 
 
 ```
 
-UK, ES, DE 세 나라가 가장 수치가 높기 때문에 세 나라를 우선 
+UK, ES, DE
 
 ```python
 
 ```
-마지막 도표에 값을 표시하는 방법은 아래 링크를 참조했습니다.
+마지막 도표에 이름을 표시하는 방법은 아래 링크를 참조했습니다.
 https://stackoverflow.com/questions/15910019/annotate-data-points-while-plotting-from-pandas-dataframe/15911372#15911372
 
 
